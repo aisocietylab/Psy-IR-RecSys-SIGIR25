@@ -1,0 +1,325 @@
+---
+search: false 
+--- 
+@charset "utf-8";
+// Design inspired by: https://calm-workshop-2024.github.io/schedule/
+
+// TODO: create fork of minimal theme!
+
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+
+/* ==========================================================================
+   My skin (copied Air skin)
+   ========================================================================== */
+
+/* colors overwrite */
+$background-color: white;
+$border-color: black;
+$footer-background-color: $background-color;
+$primary-color: black;
+$text-color: black;
+$muted-text-color: #333;
+$link-color: $text-color;
+$table-other-color: #1d3557;
+//$table-special-color: $background-color;
+$table-special-color: mix(#CC79A7, #fff, 70%);
+//$table-presentation-color: #a8dadc;
+//$table-presentation-color: #0072B2;
+$table-presentation-color: mix(#56B4E9, #fff, 50%);
+//$table-presentation-color-alt: mix(#56B4E9, #fff, 25%);
+$table-presentation-color-alt: mix(#E69F00, #fff, 40%);
+//$table-break-color: #f1faee;
+$table-break-color: mix(#009E73, #fff, 70%);
+$table-even-color: mix($background-color, $table-other-color, 70%);
+
+
+/* Colors (Air skin) */
+$masthead-link-color: $text-color !default;
+$masthead-link-color-hover: $text-color !default;
+$navicon-link-color-hover: mix(#fff, $text-color, 80%) !default;
+
+// import minimal-mistakes
+@import "minimal-mistakes"; // main partials
+
+$small: 320px !default;
+$medium: 600px !default;
+$medium-wide: 768px !default;
+$large: 1024px !default;
+$x-large: 1280px !default;
+$max-width: $x-large !default;
+
+@media (min-width: 80em) {
+    #main {
+        max-width: 80ch;
+    }
+
+    .masthead__inner-wrap {
+        max-width: 80ch;
+    }
+
+    .page__hero--overlay .wrapper {
+        max-width: 80ch;
+    }
+}
+
+$border-width: 2px; // border width
+
+// for page speed check
+@-webkit-keyframes intro {
+    0% {
+        opacity: 0.001;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes intro {
+    0% {
+        opacity: 0.001;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+// FIXME: overflow on the right
+#background-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.1;
+    margin: 0 1em;
+}
+
+h1#page-title {
+    color: $text-color;
+}
+
+// added by me
+#page-subtitle {
+    //color: $muted-text-color;
+    color: $text-color;
+    font-size: 1.5em;
+    margin-top: 0.5em;
+
+    span {
+        color: $text-color;
+    }
+}
+
+a {
+    text-decoration: underline;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.page__hero--overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // table other color
+    background-color: rgba($background-color, 0.85);
+}
+
+.page__hero--overlay {
+    padding-top: 4em; // identical to height of masthead
+    padding-bottom: 0;
+    margin-bottom: 0;
+    // background image
+    background-size: auto calc(100% - 2.5em);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+
+
+    .page__hero-caption {
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, 0);
+        font-size: 0.4em;
+        border-radius: 4px 4px 0 0;
+        padding: 3px 5px 0;
+        opacity: 0.65;
+    }
+
+    .wrapper {
+        position: relative;
+        padding-bottom: 2.0em;
+    }
+
+    .page__title {
+        //text-shadow: none !important;
+        text-shadow: 1px 1px 2px white;
+        padding-top: 1em;
+    }
+
+    .page__subtitle {
+        text-shadow: 1px 1px 2px white;
+    }
+
+    .page__lead {
+        //text-shadow: none !important;
+        text-shadow: 1px 1px 2px white;
+        color: $muted-text-color !important;
+        margin-bottom: 0;
+
+        a {
+            color: $muted-text-color;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.masthead {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border-bottom: 0;
+    z-index: 1000;
+
+    .masthead__menu {
+        margin: auto;
+    }
+}
+
+.greedy-nav {
+    backdrop-filter: blur(.1rem);
+    background-color: mix($background-color, #ffffff00, 70%); // make a bit transparent
+    // line border
+    border-top: $border-width solid $border-color;
+    border-bottom: $border-width solid $border-color;
+    padding: 0.2em 0;
+
+    .visible-links {
+        justify-content: space-around;
+    }
+}
+
+.presentation {
+    background-color: $table-presentation-color;
+}
+
+.presentation-alt {
+    background-color: $table-presentation-color-alt;
+}
+
+.break {
+    background-color: $table-break-color;
+}
+
+.other {
+    background-color: $table-other-color;
+    color: $table-break-color;
+}
+
+.special {
+    background-color: $table-special-color;
+}
+
+table {
+    display: table;
+
+    thead {
+        background-color: $background-color;
+        border-top: $border-color solid $border-width;
+    }
+
+    //every second row slightly darker
+    tbody {
+        tr:nth-child(even):not(.presentation):not(.presentation-alt):not(.break):not(.special) {
+            background-color: $table-even-color;
+        }
+    }
+}
+
+.page__content {
+    border-top: $border-width solid $border-color;
+
+    h1 {
+        padding-top: 1.5em;
+    }
+}
+
+// Images with captions
+.image_collection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .image_with_text {
+        padding: 1.5em;
+        text-align: center;
+
+        img {
+            display: block;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: $border-width solid $border-color;
+
+            margin: auto;
+        }
+
+        .image_title {
+            font-size: 1em;
+        }
+
+        a {
+            display: block;
+            margin-top: 0.2em;
+            font-size: 0.75em;
+        }
+
+        a:visited {
+            color: $muted-text-color;
+        }
+    }
+}
+
+
+.page__footer {
+    color: $text-color !important; // override
+    margin-top: 1em;
+
+    footer {
+        border-top: $border-width solid $border-color;
+        margin-top: 1em;
+        padding-top: 1em;
+
+        // follow and copyright texts
+        div {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: fit-content;
+        }
+    }
+
+
+    a {
+        text-decoration: underline;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+}
+
+.page__footer-follow .social-icons .svg-inline--fa {
+    color: inherit;
+}

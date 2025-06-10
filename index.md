@@ -3,18 +3,18 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 title: 'Psychological Aspects in Retrieval and Recommendation Tutorial'
-#subtitle: "in <span>Retrieval</span> and <span>Recommendation</span>"
+#subtitle: ""
 
-#excerpt: "June 16 @ UMAP2025 <a href='https://maps.app.goo.gl/FHEycRok827LTcJh8'>New York, USA</a>"
-#keywords: "HyPer, UMAP, Workshop, Hybrid AI, Explainability, User Modeling, Fairness, Bias, Cognitive Modeling, Knowledge Graphs, Machine Learning, Symbolic AI, Sub-Symbolic AI"
-#description: "The HyPer workshop focuses on how hybrid AI approaches can foster more explainable and personalized user experiences."
+#excerpt: ""
+keywords: "Information Retrieval, Recommender Systems, Psychology, Cognition, Bias, Personality, Emotion, Affect"
+#description: ""
 
 layout: workshop
 header:
   overlay_color: "white"
   #background_text: "HyPer"
-  #overlay_image: '/assets/images/New-York-Cityscape-Silhouette.svg'
-  #caption: "Photo credit: [**Gordon Dylan Johnson**](https://openclipart.org/detail/279645/new-york-cityscape-silhouette)"
+  #overlay_image: '/assets/images/?.svg'
+  #caption: "Photo credit: [**??**](https://some.url/to/photo)"
 locale: "en-US"
 ---
 
@@ -29,7 +29,7 @@ The interdisciplinary tutorial requires intermediate expertise in terms of IR an
 
 # Tutorial Materials
 
-Will be updated in the near future (Last edit: 10.06.2025). Materials will be available on [GitHub](https://github.com/aisocietylab/Psy-IR-RecSys-SIGIR25)
+Will be updated in the near future (Last edit: 10.06.2025). Materials will be available on [GitHub](https://github.com/aisocietylab/Psy-IR-RecSys-SIGIR25).
 
 # Organization
 

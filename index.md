@@ -18,6 +18,8 @@ header:
 locale: "en-US"
 ---
 
+This website is the home of the tutorial [**Psychological Aspects in Retrieval and Recommendation**](https://doi.org/10.1145/3726302.3731691) at SIGIR 2025, in Padua, Italy (July 13-17, 2025).
+
 # Topic and Relevance
 
 Psychological processes play a critical role in shaping users' interactions with information retrieval (IR) and recommender systems (RS).
